@@ -32,6 +32,7 @@ set(protobuf_BUILD_SHARED_LIBS OFF CACHE BOOL "Build shared libraries for subpro
 # To match onnx 1.23 requirements
 # Fetch it first to avoid conflicts with the system-installed protobuf
 FetchContent_Declare(
+    
     protobuf
     GIT_REPOSITORY https://github.com/protocolbuffers/protobuf.git
     GIT_TAG v31.1
@@ -66,7 +67,14 @@ FetchContent_Declare(
     SYSTEM
 )
 FetchContent_MakeAvailable(googletest)
-
+FetchContent_Declare(
+    cxxopts
+    GIT_REPOSITORY https://github.com/jarro2783/cxxopts.git
+    GIT_TAG v3.3.1
+    GIT_SHALLOW TRUE
+    SYSTEM
+)
+FetchContent_MakeAvailable(cxxopts)
 # should be in the root for project-wide effect
 enable_testing()
 

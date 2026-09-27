@@ -13,6 +13,7 @@ target_link_libraries(onnxcc_lib
     PRIVATE
         protobuf::libprotobuf
         onnx_proto
+        cxxopts::cxxopts
 )
 
 # Include the current source directory for the onnxcc_lib target
