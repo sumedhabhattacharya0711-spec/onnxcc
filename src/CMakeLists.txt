@@ -2,6 +2,7 @@ configure_file(onnxcc/version.h.in onnxcc/version.h @ONLY)
 
 add_library(onnxcc_lib STATIC
     onnxcc/version.cpp
+    onnxcc/cli.cpp
 )
 
 add_executable(onnxcc onnxcc/main.cpp)
