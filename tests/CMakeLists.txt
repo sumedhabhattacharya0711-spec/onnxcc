@@ -1,5 +1,6 @@
 add_executable(unit_tests
     unit/test_sanity.cpp
+    unit/test_cli.cpp
 )
 
 # link the onnxcc_lib library to the unit_tests executable.
@@ -9,6 +10,7 @@ target_link_libraries(unit_tests
         onnxcc_lib
         GTest::gtest_main
 )
+target_compile_options(unit_tests PRIVATE ${ONNXCC_WARNINGS})
 
 # Make the directory path available to the executable as a preprocessor macro because ctest runs from build/ while relative paths are relative to source dir
 target_compile_definitions(unit_tests
